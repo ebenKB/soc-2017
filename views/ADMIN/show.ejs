@@ -1,0 +1,84 @@
+<%include ../partials/header%>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-sm-12" align="center">
+        <% games.forEach(function(game){%>
+          <br><hr>
+          <div class="well" align="center">
+            <h3>SOCIALING 2017 -<%=game.name%> LEAGUE TABLE CONTROL PANEL</h3>
+          </div>
+          <table align="center">
+            <thead>
+              <th>  NAME </th>
+              <th>  COACH </th>
+              <th>  GOALS FOR </th>
+              <th>  GOALS AGAINST </th>
+              <th>  MATCHES PLAYED </th>
+              <th>  MATCHES DRAWN </th>
+              <th>  MATCHES WON </th>
+              <th>  POINTS </th>
+
+             <th>   AWARD POINTS</th>
+             <!-- <th>   ADD GOALS FOR</th>
+             <th>   ADD GOALS AGAINST</th> -->
+             <th>   SUBTRACT POINTS</th>
+             <th id="action">  ACTION</th>
+            </thead>
+            <% teams.forEach(function(team){ %>
+              <%if(team.category==game.name){%>
+                <tr>
+                  <td><%=team.name%></td>
+                  <td><%=team.coachName%></td>
+                  <td>
+                    <%=team.goal_for%>
+
+                      <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
+                        <input type="number" min="1" max="50" name="points" placeholder="Select the goals to add">
+                        <button class="btn btn-danger btn-xs" name="goalsFor"> Add Goals For </button>
+                        <button class="btn btn-danger btn-xs" name="subgoalsFor"> Subtract Goals For </button>
+                      </form>
+
+                  </td>
+                  <td>
+                    <%=team.goal_against%>
+                    <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
+                      <!--the points are now treated as goals and added to the team -->
+                      <input type="number" min="1" max="50" name="points" placeholder="Select the goals to add">
+                      <button class="btn btn-danger btn-xs" name="goalsAgainst"> Add Goals Against </button>
+                      <button class="btn btn-danger btn-xs" name="subgoalsAgaints"> Subtract Goals Against</button>
+                    </form>
+                  </td>
+                  <td><%=team.matches_played%></td>
+                  <td><%=team.matches_draw%></td>
+                  <td><%=team.matches_won%></td>
+                  <td><%=team.points%></td>
+                      <td>
+                        <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
+                          <input type="number" min="0" max="3" name="points" placeholder="Select the points to add">
+                          <button class="btn btn-danger btn-xs" name="addNewPoints"> Add Points </button>
+                        </form>
+                      </td>
+
+                <td>
+                  <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
+                    <input type="number" min="0" max="3" name="points" placeholder="Select the points to add">
+                    <button class="btn btn-danger btn-xs" name="removePoints"> Remove Points </button>
+                  </form>
+                </td>
+                <td>
+                    <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
+                      <button class="btn btn-danger btn-xs"> Delete Team </button>
+                    </form>
+                </td>
+                </tr>
+              <%}%>
+            <% }) %>
+          </table>
+        <%})%>
+
+      </div>
+    </div>
+    <div class="caption">
+      <a href="/teams/new" class="btn btn-primary btn-sm">Add New Team</a>
+    </div>
+  </div>

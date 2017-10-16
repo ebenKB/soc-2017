@@ -1,0 +1,12 @@
+<h1>show all the friends here</h1>
+
+<% user.forEach(function(user){%>
+
+<%  if(user._id !=(currentUser.id)){%>
+    <li><%=user.username%></li>
+    <!-- <a href="/friends">View Details</a>  -->
+    <form >
+          <a href="/friends/<%=user._id%>"><button class="btn btn-xs btn btn-success"type="button" name="button">Details</button></a>
+    </form>
+<%  }%>
+<%})%>

@@ -1,0 +1,44 @@
+  <%include partials/loginHeader%>
+  <div class="user">
+    <header class="user__header">
+        <img id="loginThumbnail" src="images/login.png" alt="" />
+        <h1 class="user__title">Create a new user account</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-12 col-sm-12-col-xs-12">
+        <form class="form " action="/register" method="post" enctype="multipart/form-data">
+            <div class="form__group">
+              <label for="username">*</label>
+                <input type="text" placeholder="Username" class="form__input" name ="username" required/>
+            </div>
+
+            <div class="form__group">
+                <input type="text" placeholder="Enter your contact" class="form__input" name ="phone"/>
+            </div>
+
+            <div class="form__group">
+                <input type="email" placeholder="Email" class="form__input" name ="email"/>
+            </div>
+            <div class="well form__group" >
+              <p>[--optional--] You can choose an image for your login. This will help friends to see you better.</p>
+                  <input type="file" class="form__input" name ="image"/>
+            </div>
+            <div class="form__group">
+                <label for="password">*</label>
+                <input type="password" placeholder="Password" class="form__input" name="password" required/>
+            </div>
+            <div class="form__group">
+              <label for="password2">*</label>
+                <input type="password" placeholder="Confirm Password" class="form__input" name="password2" required/>
+            </div>
+            <div class="form__group">
+                <input class="btn-signUp" type="submit" name="signUp" value="Register ">
+            </div>
+        </form>
+      </div>
+
+    </div>
+
+</div>
+
+<% include partials/footer %>

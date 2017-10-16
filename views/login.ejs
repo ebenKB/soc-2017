@@ -1,0 +1,21 @@
+
+<%include partials/loginHeader%>
+<center>
+  <div class="user loginForm">
+    <form class="form" action="/login" method="post">
+        <div class="form__group">
+            <input type="text" placeholder="Username" class="form__input" name ="username"/>
+        </div>
+        <div class="form__group">
+            <input type="password" placeholder="Password" class="form__input" name="password"/>
+        </div>
+          <input class="btn-signUp form__input" type="submit"  value="Login ">        
+
+          <!-- <div class="form_group">
+            <p style="padding:10px 0px 0px 0px">Don't have an Account?</p>
+            <a href="/register"><button type="button" class="btn">Create an Account</button></a>
+          </div> -->
+    </form>
+  </div>
+</center>
+<% include ./partials/footer %>

@@ -1,0 +1,14 @@
+<%include ../partials/header%>
+<li><%=user.username%></li>
+
+<form class="form-group" action="/friends/<%=user._id%>/new" method="post">
+   <button class="btn btn-primary" >Send Friend Request</button>
+</form>
+
+
+
+
+  
+
+
+<%include ../partials/footer%>

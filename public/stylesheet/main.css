@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**
+style the body
+
+**/
+
+footer{
+  margin-top: 15%;
+  height:  20px;
+
+}
+.loginHeader {
+  font-family: "Roboto";
+  font-size: 14px;
+  background-size: 200% 100% !important;
+  -webkit-animation: move 10s ease infinite;
+          animation: move 10s ease infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  background: -webkit-linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+  background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+  height: 100vh;
+}
+#commentsContainer{
+  margin-top:-1.2%;
+  background-color: #eeeeff;
+}
+.user {
+  width: 100%;
+  max-width: 340px;
+  margin: 10vh auto;
+}
+
+.user__header {
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 500px, 0);
+          transform: translate3d(0, 500px, 0);
+  -webkit-animation: arrive 500ms ease-in-out 0.7s forwards;
+          animation: arrive 500ms ease-in-out 0.7s forwards;
+}
+
+.user__title {
+  font-size: 14px;
+  margin-bottom: -10px;
+  font-weight: 500;
+  color: white;
+}
+
+.form {
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow:hidden;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 500px, 0);
+          transform: translate3d(0, 500px, 0);
+  -webkit-animation: arrive 500ms ease-in-out 0.9s forwards;
+          animation: arrive 500ms ease-in-out 0.9s forwards;
+
+}
+
+.slide{
+  overflow:hidden;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 500px, 0);
+          transform: translate3d(0, 500px, 0);
+  -webkit-animation: arrive 500ms ease-in-out 0.9s forwards;
+          animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+
+.form--no {
+  -webkit-animation: NO 1s ease-in-out;
+          animation: NO 1s ease-in-out;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-family: "Roboto";
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.form__input:focus {
+  background: #f7f7f7;
+}
+
+.btn-signUp {
+  display: block;
+  /*width: 100%;*/
+  padding: 20px;
+  font-family: "Roboto";
+  -webkit-appearance: none;
+  outline: 0;
+  border: 0;
+  /*color: white;*/
+  background: #ABA194;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.btn-signUp:hover {
+  background: #a09486;
+}
+
+@-webkit-keyframes NO {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes NO {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@-webkit-keyframes arrive {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50px, 0);
+            transform: translate3d(0, 50px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes arrive {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50px, 0);
+            transform: translate3d(0, 50px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/**
+style the index page
+**/
+#indexThumnail{
+  width: 140px;
+}
+/**
+Style the show post
+
+**/
+.row{
+  flex-wrap: wrap;
+  padding: 2px 2px 2px 2px;
+}
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 10px;
+}
+
+.well{
+  height: 75px;
+  align :center;
+}
+
+#allPostImg, #galleryImg{
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+}
+li img {
+  width: 30px;
+}
+
+#userName{
+  font: #ffffff;
+}
+
+#deleteForm{
+  display: inline;
+}
+
+/**
+Style the index page
+**/
+.container{
+  background-color: #ffffff;
+}
+
+
+#postContainer{
+  background-color: #eeddbb;
+}
+/**
+Style the chat /comment page
+**/
+
+#chatMsgs{
+    background-color: #eeeeee;
+}
+
+.newCommentContainer{
+  width: 30%;
+  margin: 25px auto;
+  display: grid;
+}
+
+/**
+Style the registration form
+**/
+label{
+  color: red;
+}
+  .loginForm{
+  width: 40%;
+  margin-top: 15%;
+ }
+
+input{
+  height: 35px;
+  width: 100%;
+  margin: 5px 0px 5px 0px;
+  border-radius: 5px;
+}
+
+input[type="submit"]{
+  height: 60px;
+}
+#loginImg{
+  width: 140px;
+  margin-top: 25px;
+}
+
+#loginThumbnail{
+  width: 30px;
+}
+
+#indexThumnail{
+  border-radius: 1000px;
+  border: 1px solid #ffffff;
+  width: 150px;
+}
+#newAccHeader{
+  background-color: #999999;
+  font-style:normal;
+  font-family: Seravek;
+  color:#ffffff;
+}
+
+.caption{
+  margin-top: 3%;
+}
+
+/**
+  style the tables
+ **/
+
+
+table, td, tr{
+  align:center;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+}
+
+th{
+  border: 1px solid #000000;
+  background-color: green;
+  color: #ffffff;
+  font-size: 20px;
+  height: 50px;
+  padding: 10px 0px 10px 10px;
+}
+
+ #action{
+    background-color: red;
+}
+
+td{
+  width: 281px;
+  height: 60px;
+}
+
+tr:hover{
+
+  background-color:#ffeedd;
+}
+tr:nth-child(odd){
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd):hover{
+  background-color: #ffeedd;
+
+}
+
+.caption li :nth-child(2n+1){
+  background-color: #ffeedd;
+}
+
+
+/**
+  Style for small devices
+**/
+@media only screen and (max-width: 800px) { /** start the media query**/
+  .loginForm{
+    margin: 0px 10px 0px 10px;
+    width: 90%;
+    padding: 5px 5px 5px  5px;
+    margin-top: 22%;
+  }
+
+input{
+  width: 90%;
+}
+
+.newCommentContainer{
+  width: 90%;
+  /*margin: 25px auto;
+  display: grid;*/
+}
+
+footer{
+  padding: 0px 20px 0px 20px;
+}
+}/** end media query**/

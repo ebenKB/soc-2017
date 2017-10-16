@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Add a new match Fixture</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/match" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="match[venue]" placeholder="Venue">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="time" name="match[time]" placeholder="13:00">
+                </div>
+                <div class="form-group">
+                    <select  name="match[homeTeam]">
+                      <% teams.forEach(function(team){%>
+                          <option > <%=team.name%>&emsp; -&emsp; <%=team.category%></option>
+                      <%})%>
+                    </select>
+
+                  <p><h4>Agaisnt</h4></p>
+                    <select  name="match[awayTeam]">
+                      <% teams.forEach(function(team){%>
+                          <option > <%=team.name%>&emsp; -&emsp; <%=team.category%> </option>
+                      <%})%>
+                    </select>
+                    <select name="match[category]">
+                      <% games.forEach(function(game){%>
+                        <option> <%=game.name%></option>
+                      <%})%>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/match">Go Back</a>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

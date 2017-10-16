@@ -1,0 +1,29 @@
+
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <% gallery.forEach(function(gallery){ %>
+          <%  if(gallery.image) {%>
+              <div class="col-md-4">
+                  <div class="thumbnail">
+                      <img class="img-responsive" src="images/<%=gallery.image %>">
+                      <div class="caption-full">
+                              <p><%=gallery.description%></p>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          <%  } %>
+            <%  })%>
+        </div>
+        <center>
+
+           <a href="/gallery/new">
+             <button class="btn btn-primary"type="button" >Add New Gallery</button>
+           </a>
+
+        </center>
+      </div>
+<footer>
+    <% include ../partials/footer %>
+</footer>

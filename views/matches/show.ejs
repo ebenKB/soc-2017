@@ -1,0 +1,50 @@
+<%include ../partials/header%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12" align="center">
+        <div class="well" align="center">
+          <h3>MATCH FIXTURES</h3>
+        </div>
+        <table align="center">
+          <thead>
+            <th>  CATEGORY </th>
+            <th>  Home Team </th>
+            <th>  Away Team </th>
+            <th>  Venue </th>
+            <th>  Time </th>
+            <th>  Status </th>
+          </thead>
+          <% match.forEach(function(match){ %>
+            <tr>
+              <td><%=match.category%></td>
+              <td><%=match.homeTeam%></td>
+              <td><%=match.awayTeam%></td>
+              <td><%=match.venue%></td>
+              <td><%=match.time%></td>
+              <%if(match.status ==0){%>
+                <td>
+                    Pending
+                </td>
+              <%}else{%>
+                <td>
+                  Played
+                </td>
+            <% }%>
+            </tr>
+          <% }) %>
+        </table>
+      </div>
+    </div>
+    <%if(currentUser.isAdmin==1){ %>
+      <div class="caption">
+        <a href="/match/new" class="btn btn-primary btn-sm">Add New Match Fixture</a>
+      </div>
+    <%}%>
+    <%if(currentUser.isAdmin==1){ %>
+      <div class="caption" display="inline">
+        <a href="/soc_2017/com/admin" class="btn btn-danger btn-sm">Go to Admin Control Panel</a>
+      </div>
+    <%}%>
+  </div>
+
+  <%include ../partials/footer%>

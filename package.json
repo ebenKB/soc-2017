@@ -1,0 +1,27 @@
+{
+  "name": "socializing_2017_kb",
+  "version": "1.0.0",
+  "description": "Socializing 2017 web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eben_kb",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-beta",
+    "connect-flash": "^0.1.1",
+    "express": "^4.15.4",
+    "express-fileupload": "^0.2.0",
+    "express-session": "^1.15.5",
+    "express-validator": "^4.2.1",
+    "jquery": "^3.2.1",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.12",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.2.1"
+  }
+}

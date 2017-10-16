@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Socializing 2017 Account</title>
+  <meta charset="utf-8"  name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css' >
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <link rel="stylesheet"  href="/stylesheet/main.css">
+  <script  src="js/index.js"></script>
+ <!-- <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+ <!-- <script   src="/middleware/index.js"></script> -->
+
+</head>
+<body class="loginHeader">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">SOCIALIZING 2017</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <!-- <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%if(!currentUser){%>
+            <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <%} else{%>
+            <li id="userName"> <a href="#">Logged in as <%=currentUser.username%></a></li>
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li><a href="#"><img src="/images/pic10.jpg" alt=""></a></li>
+         <% }%>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+       <% if(error && error.length > 0){ %>
+           <div class="alert alert-danger" role="alert">
+               <%= error %>
+           </div>
+       <% } %>
+       <% if(success && success.length > 0){ %>
+           <div class="alert alert-success" role="alert">
+               <%= success %>
+           </div>
+       <% } %>
+   </div>

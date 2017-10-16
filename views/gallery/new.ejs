@@ -1,0 +1,21 @@
+<%include ../partials/header%>
+<div class="jumbotron">
+  <h2 style="text-align: center">Add New Gallery </h2>
+  <p align="center"><em>Images you post as gallery will be seen by other people, but will not be submitted for comments.</em></p>
+</div>
+
+<div style="width: 30%; margin: 25px auto;">
+    <form action="/gallery"  method="POST"  enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="text" name="description" placeholder="Describe this image" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="file" name="image" value="Select an image">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-sm btn-primary btn-block">Submit!</button>
+        </div>
+    </form>
+
+    <a href="/gallery"> <button class="btn btn-warning btn-sm" name="button">View all Gallery</button></a>
+  <%include ../partials/footer %>

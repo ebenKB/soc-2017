@@ -1,0 +1,66 @@
+<% include ../partials/header %>
+<div class="container" id="postContainer">
+    <div class="row " >
+          <%foundPost.forEach(function(foundPost){%>
+                <% hasliked=[]; %>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                  <% if(foundPost.image){ %>
+                      <img class="img-responsive" src="/images/<%=foundPost.image %>">
+                    <%}%>
+                    <div class="caption-full">
+                        <h4><a><%=foundPost.title%></a></h4>
+                        <p><%= foundPost.description %></p>
+                        <p style="float:right, padding:auto 0px 2px 10px">
+                            <em>Posted By <%= foundPost.author.username %></em>
+                        </p>
+                    </div>
+                </div>
+                <div class="caption-full">
+                  <form id="deleteForm" action="/posts/<%=foundPost._id%>/comments" method="get">
+                      <button class="btn btn-xs btn btn-success"> Comments </button>
+                  </form>
+                  <% if(foundPost.likeContainer.length > 0){%>
+                        <%foundPost.likeContainer.forEach(function(like_id){%>
+                          <% if( like_id == (currentUser.id)){%>
+                             <% hasliked.push(like_id) %>
+                          <% }%>
+                   <%}) %>
+                  <%}%>
+                  <% if(hasliked.length ==1) { %>
+                    <form id="deleteForm" action="/posts/<%=foundPost._id%>?_method=PUT" method="POST">
+                        <button class="btn btn-xs btn btn-primary" name="unLike"> UnLike </button>
+                    </form>
+
+                <% } else {%>
+                      <form id="deleteForm" action="/posts/<%=foundPost._id%>?_method=PUT" method="POST">
+                          <button class="btn btn-xs btn btn-primary" name="addLike"> Like </button>
+                      </form>
+                <% } %>
+                  <% if(currentUser._id.equals(foundPost.author.id) || (currentUser.isAdmin==1)){%>
+                      <form id="deleteForm" action="/posts/<%=foundPost._id%>/edit" method="get">
+                          <button class="btn btn-xs btn btn-warning"> Edit </button>
+                      </form>
+                      <form id="deleteForm" action="/posts/<%=foundPost._id %>?_method=DELETE" method="post">
+                          <button class="btn btn-xs btn btn-danger pull-right">Delete</button>
+                      </form>
+                  <%}%>
+                      <%if (foundPost.likeTag == 0){ %>
+                          <p><%=foundPost.likeTag %>&emsp;like</p>
+                      <%}else if(foundPost.likeTag==1){%>
+                                <p><%=foundPost.likeTag %>&emsp;like</p>
+                          <% } else{ %>
+                                <p><%=foundPost.likeTag %>&emsp;likes</p>
+                            <%}%>
+                      </div>
+                </div>
+          <% }); %>
+                </div>
+            </div>
+             <div class="caption">
+               <center> <a href="/posts/new"><button class="btn btn-primary btn-xs"type="button">Add new Post</button></a> </center>
+             </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

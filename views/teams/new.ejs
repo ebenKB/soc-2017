@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h1 style="text-align: center">Create a new Team</h1>
+          <div class="loginForm" style="width: 30%; margin: 25px auto;">
+              <form action="/teams" method="POST">
+                  <div class="form-group">
+                      <input class="form-control" type="text" name="team[name]" placeholder="Name of the Team">
+                  </div>
+                  <div class="form-group">
+                      <select class="" name="team[category]" value="Type of Game">
+                        <%games.forEach(function(game){%>
+                          <option>
+                            <%=game.name%>
+                          </option>
+                        <%})%>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" type="text" name="team[coachName]" placeholder="Name of the coach">
+                  </div>
+                  <br><hr>
+                  <%if(games==""){%>
+                        <div class="row form--group">
+                          <div class="col-md-12">
+                            <div class="well form--group">
+                              <p>You have not created any games yet. Please create games before trying to create a team</p>
+                              <!-- <form  action="/gameCategory" method="post">
+                                <input class="form--control" type="text" name="category" placeholder="Enter the name of the game">
+                                  <button class="btn btn-lg btn-primary btn-block">Create game</button>
+                              </form> -->
+                              <p><a href="/gameCategory/new">Add new game</a></p>
+                            </div>
+                          </div>
+                        </div>
+
+                  <%}else{%>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                    </div>
+                  <%}%>
+              </form>
+          </div>
+        </div>
+    </div>
+    <div class="row" align="center">
+      <div class="col-md-12">
+        <%if(currentUser.isAdmin==1){ %>
+          <div class="caption" display="inline">
+            <a href="/soc_2017/com/admin" class="btn btn-danger btn-sm">Go to Admin Control Panel</a>
+          </div>
+        <%}%>
+      </div>
+    </div>
+</div>
+<% include ../partials/footer %>
