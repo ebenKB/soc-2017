@@ -3,18 +3,20 @@
   "version": "1.0.0",
   "description": "Socializing 2017 web app",
   "main": "app.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+   "start": "node app.js"
+    },
+
   "author": "Eben_kb",
   "license": "ISC",
+
   "dependencies": {
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-beta",
     "connect-flash": "^0.1.1",
     "express": "^4.15.4",
     "express-fileupload": "^0.2.0",
-    "express-sanitizer": "^1.0.2",
     "express-session": "^1.15.5",
     "express-validator": "^4.2.1",
     "jquery": "^3.2.1",

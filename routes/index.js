@@ -28,8 +28,8 @@ var express     = require("express"),
 
       if(errors){
         req.session.errors = errors;
-        req.flash("error","Please provide data for the required fields.")
-        res.render("register");
+        req.flash("error","Password should be 4 letters or more. Please provide data for the required fields.")
+        res.redirect("/register");
       }else{
              //check if the image is not null
              if(req.files.image){
@@ -39,7 +39,7 @@ var express     = require("express"),
                image.mv("public/images/"+imageName,function(err){
                 if(err){
                   req.flash("error",err.message);
-                  //console.log("an error occurred while moving the file to the server")
+                  res.redirect("/register");
                 }
               });
              }
