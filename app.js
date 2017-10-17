@@ -45,14 +45,14 @@ var dbpass="iiajf86dfd37bc8no8o5n0mq1k";
 // // mongodb://dbuser:dbpass@host1:port1,host2:port2/dbname
 // // // mongoose.connnect("mongodb:heroku_12345678:6095KBADJEi@ds029017.mLab.com:29017/heroku_12345678");
 // //mongoose.connect("mongodb://dbuser:dbpass@host:port/dbname");
- mongoose.connect("mongodb://localhost/soc_2017");
+// mongoose.connect("mongodb://localhost/soc_2017");
 
 
-// mongoose.connect(process.env.MONGOLAB_URI,function(err){
-//   if(err){
-//     console.log(err);
-//   }
-//  });
+mongoose.connect(process.env.MONGOLAB_URI,function(err){
+  if(err){
+    console.log(err);
+  }
+ });
 app.use(flash());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(expressValidator());
