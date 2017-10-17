@@ -3,8 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <% matches.for(function(match){%>
-      <% if(match.status==1){%>
+
         <% games.forEach(function(game){%>
           <div class="well">
             <h3 align="center">LEAGUE TABLE FOR&emsp;<%=game.name.toUpperCase()%></h3>
@@ -23,7 +22,7 @@
             </thead>
             <tbody>
               <% teams.forEach(function(team){%>
-                  <%if(team.category==game.name && ((team.name==match.homeTeam)||(team.name==match.awayTeam))){%>
+                  <%if(team.category==game.name){%>
                     <tr>
                       <td><%=team.name%></td>
                       <td><%=team.coachName%></td>
@@ -39,8 +38,7 @@
             </tbody>
           </table>
       <% })%>
-      <%}%>
-    <%})%>
+
     </div>
   </div>
   <%if(currentUser.isAdmin==1){ %>

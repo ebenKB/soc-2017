@@ -1,11 +1,12 @@
 <%include ../partials/header%>
-<h1>EDIT POST</h1>
-<form class="" action="/posts/<%=post._id%>?_method=PUT" method="post">
-  <input type="text" name="post[title]" value="<%=post.title%>">
-    <input type="text" name="post[description]" value="<%=post.description%>">
-    <input type="text" name="post[image]" value="<%=post.image%>">
-    <button class="btn btn-success" type="submit" name="button">Confirm changes</button>
-    <img src="/<%=post.image%>" alt="Image  not found">
-</form>
-
-<a href="/posts">Go back</a>
+<div class="loginForm" id="editPost">
+  <h1>EDIT POST</h1>
+  <form class="" action="/posts/<%=post._id%>?_method=PUT" method="post">
+    <input type="text" name="post[title]" value="<%=post.title%>">
+      <input type="text" name="post[description]" value="<%=post.description%>">
+      <input type="text" name="post[image]" value="<%=post.image%>">
+      <button class="btn btn-success" type="submit" name="button">Confirm changes</button>
+      <img src="/<%=post.image%>" alt="Image  not found">
+  </form>
+  <a href="/posts">Go back</a>
+</div>
