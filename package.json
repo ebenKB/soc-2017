@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "description": "Socializing 2017 web app",
   "main": "app.js",
-
   "scripts": {
-   "start": "node app.js"
-    },
-
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+  },
   "author": "Eben_kb",
   "license": "ISC",
-
   "dependencies": {
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-beta",
