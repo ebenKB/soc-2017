@@ -20,7 +20,7 @@ var express     = require("express"),
   router.post("/register",function(req,res){
       //check if the fields are valid
       var imageName="login.png";
-      var image;
+      var image="";
       req.checkBody('username', 'Invalid name').isAlpha();
       req.check("email","Invalid email provided").isEmail;
       req.check("password","Password is invalid").isLength({min:4}).equals(req.body.password2);
